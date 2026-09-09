@@ -101,26 +101,26 @@ jobs:
           PATH="/github/home/.local/bin:$PATH"
           Tools/scripts/build_ci.sh
 
-      - name: Archive buildlog artifacts
-        uses: actions/upload-artifact@v7
-        if: failure()
-        with:
-           name: fail-${{matrix.config}}
-           path: |
-             /tmp/buildlogs
-             /__w/ardupilot/ardupilot/logs
-             /__w/ardupilot/ardupilot/ap-*.core
-             /__w/ardupilot/ardupilot/core.*
-             /__w/ardupilot/ardupilot/dumpstack.sh_*
-             /__w/ardupilot/ardupilot/dumpcore.sh_*
-           retention-days: 14
+      # - name: Archive buildlog artifacts
+      #   uses: actions/upload-artifact@v7
+      #   if: failure()
+      #   with:
+      #      name: fail-${{matrix.config}}
+      #      path: |
+      #        /tmp/buildlogs
+      #        /__w/ardupilot/ardupilot/logs
+      #        /__w/ardupilot/ardupilot/ap-*.core
+      #        /__w/ardupilot/ardupilot/core.*
+      #        /__w/ardupilot/ardupilot/dumpstack.sh_*
+      #        /__w/ardupilot/ardupilot/dumpcore.sh_*
+      #      retention-days: 14
 
-      - name: Archive .bin artifacts
-        uses: actions/upload-artifact@v7
-        with:
-           name: BIN-${{matrix.config}}
-           path: /__w/ardupilot/ardupilot/logs
-           retention-days: 7
+      # - name: Archive .bin artifacts
+      #   uses: actions/upload-artifact@v7
+      #   with:
+      #      name: BIN-${{matrix.config}}
+      #      path: /__w/ardupilot/ardupilot/logs
+      #      retention-days: 7
 
   build-gcc-heli:
     runs-on: ubuntu-22.04
@@ -197,23 +197,23 @@ jobs:
           PATH="/github/home/.local/bin:$PATH"
           Tools/scripts/build_ci.sh
 
-      - name: Archive buildlog artifacts
-        uses: actions/upload-artifact@v7
-        if: failure()
-        with:
-           name: fail-${{matrix.config}}
-           path: |
-             /tmp/buildlogs
-             /__w/ardupilot/ardupilot/logs
-             /__w/ardupilot/ardupilot/ap-*.core
-             /__w/ardupilot/ardupilot/core.*
-             /__w/ardupilot/ardupilot/dumpstack.sh_*
-             /__w/ardupilot/ardupilot/dumpcore.sh_*
-           retention-days: 14
+      # - name: Archive buildlog artifacts
+      #   uses: actions/upload-artifact@v7
+      #   if: failure()
+      #   with:
+      #      name: fail-${{matrix.config}}
+      #      path: |
+      #        /tmp/buildlogs
+      #        /__w/ardupilot/ardupilot/logs
+      #        /__w/ardupilot/ardupilot/ap-*.core
+      #        /__w/ardupilot/ardupilot/core.*
+      #        /__w/ardupilot/ardupilot/dumpstack.sh_*
+      #        /__w/ardupilot/ardupilot/dumpcore.sh_*
+      #      retention-days: 14
 
-      - name: Archive .bin artifacts
-        uses: actions/upload-artifact@v7
-        with:
-           name: BIN-${{matrix.config}}
-           path: /__w/ardupilot/ardupilot/logs
-           retention-days: 7
+      # - name: Archive .bin artifacts
+      #   uses: actions/upload-artifact@v7
+      #   with:
+      #      name: BIN-${{matrix.config}}
+      #      path: /__w/ardupilot/ardupilot/logs
+      #      retention-days: 7
